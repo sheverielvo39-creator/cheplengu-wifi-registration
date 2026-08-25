@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cheplengu Free WiFi (GoK) Registration</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f7f6;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+    }
+    .container {
+      max-width: 500px;
+      width: 100%;
+      background: #ffffff;
+      padding: 25px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    h1, h2 {
+      text-align: center;
+      color: #1b5e20;
+    }
+    .meta-info {
+      background: #e8f5e9;
+      padding: 10px;
+      border-radius: 5px;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    input[type="text"], input[type="tel"], select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    .btn-register {
+      width: 100%;
+      background-color: green;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .btn-register:hover {
+      background-color: #006400;
+    }
+    .rules-section {
+      margin-top: 25px;
+      padding-top: 15px;
+      border-top: 1px solid #ddd;
+    }
+    .rules-title {
+      text-decoration: underline;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .rules-list {
+      padding-left: 20px;
+    }
+    .help-section {
+      margin-top: 20px;
+      font-size: 13px;
+      background: #f9f9f9;
+      padding: 10px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Cheplengu Free WiFi (GoK)</h1>
+  <p style="text-align: center;">User Eligibility & Registration Portal</p>
+
+  <div class="meta-info">
+    <p><strong>Registrar Name:</strong> Sheveri Elvis</p>
+    <p><strong>Access Fee:</strong> KES 50</p>
+  </div>
+
+  <form id="wifiForm">
+    <!-- Name of User -->
+    <div class="form-group">
+      <label for="fullName">Full Name:</label>
+      <input type="text" id="fullName" placeholder="Enter your full name" required>
+    </div>
+
+    <!-- Age Dropdown -->
+    <div class="form-group">
+      <label for="age">Age (Must be 18+):</label>
+      <select id="age" required>
+        <option value="">Select Age</option>
+        <option value="18">18</option>
+        <option value="19">19</option>
+        <option value="20">20</option>
+        <option value="21">21</option>
+        <option value="22">22</option>
+        <option value="23">23</option>
+        <option value="24">24</option>
+        <option value="25">25</option>
+        <option value="26">26</option>
+        <option value="27">27</option>
+        <option value="28">28</option>
+      </select>
+    </div>
+
+    <!-- Phone Number -->
+    <div class="form-group">
+      <label for="phoneNumber">Phone Number (M-Pesa):</label>
+      <input type="tel" id="phoneNumber" placeholder="e.g. 254712345678" required>
+    </div>
+
+    <!-- Member Registration Number -->
+    <div class="form-group">
+      <label for="regNumber">Member Registration Number:</label>
+      <input type="text" id="regNumber" placeholder="Enter Registration Number (e.g. 45160448)" required>
+    </div>
+
+    <!-- Register Button -->
+    <button type="submit" class="btn-register">Register</button>
+  </form>
+
+  <!-- Rules Section -->
+  <div class="rules-section">
+    <div class="rules-title">Rules</div>
+    <ul class="rules-list">
+      <li>Dont overuse wifi</li>
+      <li>Regulated by the government of cheplengu</li>
+    </ul>
+  </div>
+
+  <!-- Helpline Section -->
+  <div class="help-section">
+    <strong>Helpline:</strong><br>
+    Email: Sheverielvo39@gmail.com<br>
+    Call: +254745160448<br>
+    WhatsApp: +254119211076
+  </div>
+</div>
+
+<script>
+  document.getElementById('wifiForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    const phone = document.getElementById('phoneNumber').value;
+    const regNum = document.getElementById('regNumber').value;
+    
+    // Validating registration number
+    if (regNum !== "45160448") {
+      alert("Invalid Member Registration Number!");
+      return;
+    }
+
+    alert("Sending M-Pesa PIN Prompt (KES 50) to " + phone + "...");
+    
+    // Connect your backend API here (STK Push) to process M-Pesa payment
+  });
+</script>
+
+</body>
+</html>
